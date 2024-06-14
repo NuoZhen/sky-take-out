@@ -30,8 +30,10 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Autowired
     private CategoryMapper categoryMapper;
+
     @Autowired
     private DishMapper dishMapper;
+
     @Autowired
     private SetmealMapper setmealMapper;
 
