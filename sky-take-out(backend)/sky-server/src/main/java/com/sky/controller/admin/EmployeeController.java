@@ -79,6 +79,7 @@ public class EmployeeController {
 
     /**
      * 新增员工
+     *
      * @param employeeDTO
      * @return
      */
@@ -94,6 +95,7 @@ public class EmployeeController {
 
     /**
      * 员工分页查询
+     *
      * @param employeePageQueryDTO
      * @return
      */
@@ -107,6 +109,7 @@ public class EmployeeController {
 
     /**
      * 启用禁用员工账号
+     *
      * @param status
      * @param id
      * @return
@@ -116,6 +119,19 @@ public class EmployeeController {
     public Result status(@PathVariable Integer status, Long id) {
         log.info("启用禁用员工账号：{}，{}", status, id);
         employeeService.status(status, id);
+        return Result.success();
+    }
+
+    /**
+     * 根据id查询员工信息
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    @ApiOperation("根据id查询员工信息")
+    public Result<Employee> getById(@PathVariable Long id) {
+        Employee employee = employeeService.getById(id);
         return Result.success();
     }
 }
