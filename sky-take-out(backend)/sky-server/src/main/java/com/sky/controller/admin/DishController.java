@@ -29,6 +29,7 @@ public class DishController {
 
     /**
      * 新增菜品
+     *
      * @param dishDTO
      * @return
      */
@@ -42,6 +43,7 @@ public class DishController {
 
     /**
      * 菜品分页查询
+     *
      * @return
      */
     @GetMapping("/page")
@@ -54,6 +56,7 @@ public class DishController {
 
     /**
      * 菜品批量删除
+     *
      * @param ids
      * @return
      */
@@ -67,7 +70,8 @@ public class DishController {
 
     /**
      * 根据id查询菜品
-      * @param id
+     *
+     * @param id
      * @return
      */
     @GetMapping("/{id}")
@@ -80,6 +84,7 @@ public class DishController {
 
     /**
      * 修改菜品
+     *
      * @param dishDTO
      * @return
      */
@@ -93,12 +98,13 @@ public class DishController {
 
     /**
      * 根据分类id查询菜品
+     *
      * @param categoryId
      * @return
      */
     @GetMapping("/list")
     @ApiOperation("根据分类id查询菜品")
-    public Result<List<Dish>> list(Long categoryId){
+    public Result<List<Dish>> list(Long categoryId) {
         List<Dish> list = dishService.list(categoryId);
         return Result.success(list);
     }

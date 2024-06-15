@@ -21,6 +21,7 @@ public class ShopController {
 
     /**
      * 设置店铺的营业状态
+     *
      * @param status
      * @return
      */
@@ -34,6 +35,7 @@ public class ShopController {
 
     /**
      * 获取店铺的营业状态
+     *
      * @return
      */
     @GetMapping("/status")

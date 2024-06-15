@@ -80,6 +80,7 @@ public class DishServiceImpl implements DishService {
 
     /**
      * 菜品批量删除
+     *
      * @param ids
      */
     @Transactional
@@ -117,6 +118,7 @@ public class DishServiceImpl implements DishService {
 
     /**
      * 根据id查询菜品和对应口味数据
+     *
      * @param id
      * @return
      */
@@ -138,6 +140,7 @@ public class DishServiceImpl implements DishService {
 
     /**
      * 根据id修改菜品基本信息和对应的口味信息
+     *
      * @param dishDTO
      */
     @Override
@@ -164,6 +167,7 @@ public class DishServiceImpl implements DishService {
 
     /**
      * 根据分类id查询菜品
+     *
      * @param categoryId
      * @return
      */
@@ -178,6 +182,7 @@ public class DishServiceImpl implements DishService {
 
     /**
      * 条件查询菜品和口味
+     *
      * @param dish
      * @return
      */
@@ -188,7 +193,7 @@ public class DishServiceImpl implements DishService {
 
         for (Dish d : dishList) {
             DishVO dishVO = new DishVO();
-            BeanUtils.copyProperties(d,dishVO);
+            BeanUtils.copyProperties(d, dishVO);
 
             //根据菜品id查询对应的口味
             List<DishFlavor> flavors = dishFlavorMapper.getByDishId(d.getId());
